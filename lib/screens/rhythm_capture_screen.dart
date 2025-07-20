@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'button_select_screen.dart';
 import 'login_screen.dart'; // Added import for LoginScreen
+import 'package:url_launcher/url_launcher.dart';
 
 class RhythmCaptureScreen extends StatefulWidget {
   final String username;
@@ -256,6 +257,72 @@ class _RhythmCaptureScreenState extends State<RhythmCaptureScreen> {
                             (route) => false,
                           );
                         },
+                      ),
+                    ),
+                    // Remove previous YouTube button and add two top buttons
+                    Positioned(
+                      top: 30,
+                      left: 0,
+                      right: 0,
+                      child: Stack(
+                        children: [
+                          // Left button: Full working demo
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 12), // More left shift
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.red,
+                                  foregroundColor: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                                  minimumSize: const Size(0, 0),
+                                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                                ),
+                                onPressed: () async {
+                                  final url = Uri.parse('https://youtu.be/jW0pKK_oLvs?si=Q6rar86X_03_JTck');
+                                  await launchUrl(url, mode: LaunchMode.externalApplication);
+                                },
+                                child: const Text(
+                                  'Full\nworking\ndemo',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 11, height: 1.1),
+                                ),
+                              ),
+                            ),
+                          ),
+                          // Right button: How to Login
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 12), // More right shift
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.red,
+                                  foregroundColor: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                                  minimumSize: const Size(0, 0),
+                                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                                ),
+                                onPressed: () async {
+                                  final url = Uri.parse('https://youtube.com/shorts/-MjnPrmZdQY');
+                                  await launchUrl(url, mode: LaunchMode.externalApplication);
+                                },
+                                child: const Text(
+                                  'How to\nLogin',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 11, height: 1.1),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
