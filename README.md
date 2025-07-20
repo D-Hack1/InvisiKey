@@ -1,6 +1,6 @@
-# PrototypeBank
+# InvisiKey
 
-PrototypeBank is a modern, experimental banking app that uses rhythm-based authentication and a secret button as a second factor, built with Flutter (frontend) and FastAPI (Python backend). It features secure login, PIN and rhythm-based transaction verification, and a Postgres (Neon) backend.
+InvisiKey is a modern, experimental banking app that uses rhythm-based authentication and a secret button as a second factor, built with Flutter (frontend) and FastAPI (Python backend). It features secure login, PIN and rhythm-based transaction verification, and a Postgres (Neon) backend.
 
 ## Features
 - **Rhythm-based authentication**: Users tap a rhythm on a secret button as part of login and transaction verification.
@@ -73,7 +73,7 @@ The app implements a comprehensive security system to prevent brute-force attack
 ### Frontend Setup (Flutter)
 1. Navigate to the project root:
    ```sh
-   cd prototypebank
+   cd InvisiKey
    ```
 2. Install Flutter dependencies:
    ```sh
