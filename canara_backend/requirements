@@ -1,0 +1,13 @@
+fastapi>=0.100.0
+uvicorn[standard]>=0.22.0
+sqlalchemy>=1.4.0
+psycopg2-binary>=2.9.0
+passlib[bcrypt]>=1.7.4
+python-dotenv>=1.0.0
+pydantic[email]>=1.10.0
+scikit-learn>=1.2.0
+joblib>=1.2.0
+PyJWT>=2.6.0
+alembic>=1.8.0
+aiosmtplib>=2.0.0
+requests>=2.28.0
