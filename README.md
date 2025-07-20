@@ -2,6 +2,24 @@
 
 InvisiKey is a modern, experimental banking app that uses rhythm-based authentication and a secret button as a second factor, built with Flutter (frontend) and FastAPI (Python backend). It features secure login, PIN and rhythm-based transaction verification, and a Postgres (Neon) backend.
 
+## Backend Deployment (Live)
+The backend is already deployed and running on Render:
+**https://canara-backend-fjmu.onrender.com**
+
+You do not need to run the backend locally unless you want to develop or test backend changes. The Flutter app is pre-configured to use this backend for all API calls.
+
+## Quick Start (Using Deployed Backend)
+1. **Install Flutter dependencies:**
+   ```sh
+   flutter pub get
+   ```
+2. **Run the Flutter app:**
+   ```sh
+   flutter run -d windows   # or -d chrome, -d macos, -d linux, etc.
+   ```
+
+The app will connect to the deployed backend automatically.
+
 ## Features
 - **Rhythm-based authentication**: Users tap a rhythm on a secret button as part of login and transaction verification.
 - **Secret button**: During signup, users select a button; only tapping the correct button with the correct rhythm allows access.
@@ -46,6 +64,8 @@ The app implements a comprehensive security system to prevent brute-force attack
 - PostgreSQL database (Neon or local)
 
 ### Backend Setup (FastAPI)
+> **Note:** The backend is already deployed on Render at https://canara-backend-fjmu.onrender.com. You only need to follow these steps if you want to run or develop the backend locally.
+
 1. Navigate to `canara_backend/`:
    ```sh
    cd canara_backend
@@ -71,6 +91,21 @@ The app implements a comprehensive security system to prevent brute-force attack
    ```
 
 ### Frontend Setup (Flutter)
+
+If you're cloning the frontend repo and planning to run it for iOS:
+
+**iOS Note**:
+
+If the ios/ directory is missing, run this command in the root of your project:
+```sh
+flutter create .
+```
+Then, to run the app on iOS:
+```sh
+flutter run -d ios
+```
+This command won’t affect your app code. It creates necessary native files for iOS compatibility.
+
 1. Navigate to the project root:
    ```sh
    cd InvisiKey
